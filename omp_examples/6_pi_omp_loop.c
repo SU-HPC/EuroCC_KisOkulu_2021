@@ -15,7 +15,7 @@
 */
 #include <stdio.h>
 #include <omp.h>
-static long num_steps = 1024 * 1024 * 1024;
+static long num_steps = 1024 * 1024 * 64;
 double step;
 int main () {
   int i, t;
