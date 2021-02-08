@@ -83,13 +83,9 @@ int main() {
     2. datayı cihaza kopyala
     3. gpuyu kodunu çalıştır
     4. datayı ana makineye kopyala
-    5. 
+    5. cihazda ayrılan hafızayı serbest bırak
 
   */
-  cudaMalloc(&d_data, N * sizeof(float));
-  cudakernel<<<N/256, 256>>>(d_data);
-  cudaMemcpy(data, d_data, N * sizeof(float), cudaMemcpyDeviceToHost);
-  cudaFree(d_data); 
   end = std::chrono::system_clock::now();
 
   elapsed_seconds = end-start;
